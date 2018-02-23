@@ -10,16 +10,10 @@ import Input, { InputLabel } from "material-ui/Input";
 const styles = {
   textInput: {
     borderRadius: 4,
-    backgroundColor: "rgba(0, 123, 255, .10)",
-    border: "3px solid #0b3861",
-    fontSize: 12,
-    padding: "10px 12px",
+    backgroundColor: "rgba(0, 123, 255, .05)",
+    border: "2px solid #0b3861",
+    padding: "16px 16px",
     width: "calc(100% - 20px)",
-    // transition: theme.transitions.create(["border-color", "box-shadow"]),
-    // "&:focus": {
-    //   borderColor: "#80bdff",
-    //   boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
-    // }
   },
 };
 
