@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+
 import Grid from "material-ui/Grid";
 import Divider from "material-ui/Divider";
+import Button from "material-ui/Button";
+
 import "typeface-roboto";
 
 const Body = props => {
@@ -8,7 +11,12 @@ const Body = props => {
     <div>
       <Grid container spacing={24}>
         <Grid item xs={12} sm={6}>
-          Grid section 1
+          <center>
+            <Button variant="raised" size="large" color="primary">
+              Submit
+            </Button>            
+          </center>
+
         </Grid>
         <Grid item xs={12} sm={6}>
           Grid section 2
