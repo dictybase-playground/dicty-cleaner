@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
-
 import TextField from "material-ui/TextField";
 import Button from "material-ui/Button";
-import Input, { InputLabel } from "material-ui/Input";
 
 const styles = {
   textInput: {
