@@ -4,6 +4,7 @@ import Divider from "material-ui/Divider";
 import Button from "material-ui/Button";
 import TextBox from "./TextBox";
 import ResultBox from "./ResultBox";
+import randomString from "random-string";
 
 class Body extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Body extends Component {
 
   handleButtonClick() {
     /* When button is clicked, update the result */
-    this.setState({ input: this.state.input, result: " change!" });
+    this.setState({ input: this.state.input, result: randomString({length: 10}) });
     console.log("Button was clicked! Here is the result: ", this.state.result);
   }
 
