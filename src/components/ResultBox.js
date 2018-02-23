@@ -1,23 +1,25 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
-import Button from "material-ui/Button";
 
-const styles = {
-  textOutput: {
-    borderRadius: 4,
-    backgroundColor: "rgba(0, 123, 255, .50)",
-    border: "2px solid #0b3861",
-    padding: "16px 16px",
-    width: "calc(100% - 65px)"
-  }
+import Paper from 'material-ui/Paper';
+
+const style = {
+  height: 180,
+  width: "100%",
+  padding: 25,
+  textAlign: 'center',
+  display: 'inline-block',
+  backgroundColor: "rgba(0, 123, 255, .05)",
 };
 
 const ResultBox = props => {
   return (
     <center>
       <br />
-      Results go in here
+      <Paper style={style}>
+        Hello, I am text
+      </Paper>
     </center>
   );
 };
@@ -27,4 +29,4 @@ ResultBox.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ResultBox);
+export default withStyles(style)(ResultBox);
