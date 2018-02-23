@@ -17,12 +17,19 @@ const style = {
 class TextBox extends Component {
   constructor(props) {
     super(props);
+
+    /* Bind all non-react functions */
     this.handleChange = this.handleChange.bind(this);
+    this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   handleChange(e) {
     /* Call event handler passed from parent component */
     this.props.onChange(e.target.value);
+  }
+
+  onButtonClick() {
+    this.props.handleButtonClick();
   }
 
 
@@ -39,7 +46,12 @@ class TextBox extends Component {
         />
         <div>
           <br />
-          <Button variant="raised" size="large" color="primary">
+          <Button
+            variant="raised"
+            size="large"
+            color="primary"
+            onClick={this.onButtonClick}
+            >
             Submit
           </Button>
         </div>

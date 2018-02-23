@@ -12,6 +12,7 @@ class Body extends Component {
 
     /* React components using ES6 classes do not autobind non React methods */
     this.onChange = this.onChange.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   onChange(input) {
@@ -20,9 +21,9 @@ class Body extends Component {
     console.log("Input: ", this.state.input);
   }
 
-  handleButtonClick(prevState) {
+  handleButtonClick() {
     /* When button is clicked, update the result */
-    this.setState({ input: this.state.input, result: prevState + " change!" } );
+    this.setState({ input: this.state.input, result: " change!" });
     console.log("Button was clicked! Here is the result: ", this.state.result);
   }
 
@@ -31,12 +32,13 @@ class Body extends Component {
       <div>
         <Grid container spacing={24}>
           <Grid item xs={12} sm={6}>
-            <TextBox onChange={this.onChange} />
+            <TextBox
+              onChange={this.onChange}
+              handleButtonClick={this.handleButtonClick}
+            />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <ResultBox
-              result={this.state.result}
-             />
+            <ResultBox result={this.state.result} />
           </Grid>
         </Grid>
       </div>
