@@ -12,8 +12,8 @@ const styles = {
     borderRadius: 4,
     backgroundColor: "rgba(0, 123, 255, .05)",
     border: "2px solid #0b3861",
-    padding: "16px 16px",
-    width: "calc(100% - 20px)",
+    padding: "16px",
+    width: "calc(100% - 65px)",
   },
 };
 
