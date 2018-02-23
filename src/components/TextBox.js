@@ -10,9 +10,9 @@ import Input, { InputLabel } from "material-ui/Input";
 const styles = {
   textInput: {
     borderRadius: 4,
-    // backgroundColor: theme.palette.common.white,
-    border: "1px solid #ced4da",
-    fontSize: 16,
+    backgroundColor: "rgba(0, 123, 255, .10)",
+    border: "3px solid #0b3861",
+    fontSize: 12,
     padding: "10px 12px",
     width: "calc(100% - 20px)",
     // transition: theme.transitions.create(["border-color", "box-shadow"]),
