@@ -13,21 +13,15 @@ const style = {
   backgroundColor: "rgba(0, 123, 255, .05)",
 };
 
-class ResultBox extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const ResultBox = props => {
     return (
       <center>
         <br />
         <Paper style={style}>
-          {this.props.result}
+          {props.result}
         </Paper>
       </center>
     );
-  }
 };
 
 ResultBox.propTypes = {
