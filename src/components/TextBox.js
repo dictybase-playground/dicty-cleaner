@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
 
 import TextField from "material-ui/TextField";
 import Button from "material-ui/Button";
 import Input, { InputLabel } from "material-ui/Input";
-
 
 const styles = {
   textInput: {
@@ -13,35 +12,33 @@ const styles = {
     backgroundColor: "rgba(0, 123, 255, .05)",
     border: "2px solid #0b3861",
     padding: "16px 16px",
-    width: "calc(100% - 65px)",
-  },
+    width: "calc(100% - 65px)"
+  }
 };
 
-const Body = props => {
+const TextBox = props => {
   return (
-    <div>
+    <center>
       <br />
-      <center>
-        <TextField
-          magin="normal"
-          multiline
-          rows={10}
-          className={props.classes.textInput}
-        />
-        <div>
-          <br/>
-          <Button variant="raised" size="large" color="primary">
-            Submit
-          </Button>
-        </div>
-      </center>
-    </div>
+      <TextField
+        magin="normal"
+        multiline
+        rows={10}
+        className={props.classes.textInput}
+      />
+      <div>
+        <br />
+        <Button variant="raised" size="large" color="primary">
+          Submit
+        </Button>
+      </div>
+    </center>
   );
 };
 
-Body.propTypes = {
+TextBox.propTypes = {
   children: PropTypes.node,
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Body);
+export default withStyles(styles)(TextBox);
