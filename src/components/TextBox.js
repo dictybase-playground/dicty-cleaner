@@ -12,7 +12,7 @@ const styles = {
     borderRadius: 4,
     backgroundColor: "rgba(0, 123, 255, .05)",
     border: "2px solid #0b3861",
-    padding: "16px",
+    padding: "16px 16px",
     width: "calc(100% - 65px)",
   },
 };
@@ -20,6 +20,7 @@ const styles = {
 const Body = props => {
   return (
     <div>
+      <br />
       <center>
         <TextField
           magin="normal"
@@ -28,6 +29,7 @@ const Body = props => {
           className={props.classes.textInput}
         />
         <div>
+          <br/>
           <Button variant="raised" size="large" color="primary">
             Submit
           </Button>
