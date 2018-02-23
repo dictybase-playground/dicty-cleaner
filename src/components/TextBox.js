@@ -21,9 +21,10 @@ class TextBox extends Component {
   }
 
   handleChange(e) {
-    console.log("There has been a change");
-    this.props.handleButtonClick(e.target.value);
+    /* Call event handler passed from parent component */
+    this.props.onChange(e.target.value);
   }
+
 
   render() {
     return (

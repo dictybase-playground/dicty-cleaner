@@ -10,14 +10,20 @@ class Body extends Component {
     super(props);
     this.state = { input: "", result: "" };
 
-    /* React components using ES6 classes no longer autobind "this" to non React methods */
-    this.handleButtonClick = this.handleButtonClick.bind(this);
+    /* React components using ES6 classes do not autobind non React methods */
+    this.onChange = this.onChange.bind(this);
   }
 
-  handleButtonClick(input) {
+  onChange(input) {
+    /* Only update the value of the input */
     this.setState({ input: input, result: this.state.result });
     console.log("Input: ", this.state.input);
-    console.log("Result: ", this.state.result);
+  }
+
+  handleButtonClick(prevState) {
+    /* When button is clicked, update the result */
+    this.setState({ input: this.state.input, result: prevState + " change!" } );
+    console.log("Button was clicked! Here is the result: ", this.state.result);
   }
 
   render() {
@@ -25,10 +31,12 @@ class Body extends Component {
       <div>
         <Grid container spacing={24}>
           <Grid item xs={12} sm={6}>
-            <TextBox handleButtonClick={this.handleButtonClick} />
+            <TextBox onChange={this.onChange} />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <ResultBox />
+            <ResultBox
+              result={this.state.result}
+             />
           </Grid>
         </Grid>
       </div>
