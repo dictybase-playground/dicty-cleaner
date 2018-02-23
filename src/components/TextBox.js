@@ -19,19 +19,19 @@ class TextBox extends Component {
     super(props);
 
     /* Bind all non-react functions */
-    this.handleChange = this.handleChange.bind(this);
-    this.onButtonClick = this.onButtonClick.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  handleChange(e) {
-    /* Call event handler passed from parent component */
+  /* Call event handlers passed from parent component to lift the state */
+  
+  onChange(e) {
     this.props.onChange(e.target.value);
   }
 
-  onButtonClick() {
+  handleButtonClick() {
     this.props.handleButtonClick();
   }
-
 
   render() {
     return (
@@ -42,7 +42,7 @@ class TextBox extends Component {
           multiline
           rows={10}
           className={this.props.classes.textInput}
-          onChange={this.handleChange}
+          onChange={this.onChange}
         />
         <div>
           <br />
@@ -50,7 +50,7 @@ class TextBox extends Component {
             variant="raised"
             size="large"
             color="primary"
-            onClick={this.onButtonClick}
+            onClick={this.handleButtonClick}
             >
             Submit
           </Button>
