@@ -13,7 +13,8 @@ const style = {
     width: "90%"
   },
   button: {
-    width: "90%"
+    width: "90%",
+    backgroundColor: "#0b3861",
   }
 };
 
