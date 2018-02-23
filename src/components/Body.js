@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Grid from "material-ui/Grid";
-import Divider from "material-ui/Divider";
 import Button from "material-ui/Button";
 import TextBox from "./TextBox";
 import ResultBox from "./ResultBox";
 import randomString from "random-string";
+import Divider from 'material-ui/Divider';
 
 class Body extends Component {
   constructor(props) {
@@ -31,7 +31,10 @@ class Body extends Component {
   render() {
     return (
       <div>
-
+        <center>
+          <h1>Dicty Cleaner</h1>
+        </center>
+        <Divider />
         <Grid container spacing={16} >
           <Grid item xs={12} sm={6}>
             <TextBox
