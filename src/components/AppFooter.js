@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Footer } from "dicty-components-header-footer";
 
 const items = [

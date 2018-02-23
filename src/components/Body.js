@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Grid from "material-ui/Grid";
-import Button from "material-ui/Button";
 import TextBox from "./TextBox";
 import ResultBox from "./ResultBox";
 import randomString from "random-string";
