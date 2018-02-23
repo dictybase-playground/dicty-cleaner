@@ -19,7 +19,7 @@ class Body extends Component {
   onChange(input) {
     /* Only update the value of the input */
     this.setState({ input: input, result: this.state.result });
-    console.log("Input: ", this.state.input);
+    console.log("Updated Input: ", this.state.input);
   }
 
   handleButtonClick() {
@@ -31,7 +31,8 @@ class Body extends Component {
   render() {
     return (
       <div>
-        <Grid container spacing={24}>
+
+        <Grid container spacing={16} >
           <Grid item xs={12} sm={6}>
             <TextBox
               onChange={this.onChange}

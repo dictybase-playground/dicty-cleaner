@@ -10,7 +10,10 @@ const style = {
     backgroundColor: "rgba(0, 123, 255, .05)",
     border: "2px solid #0b3861",
     padding: "16px 16px",
-    width: "calc(100% - 65px)"
+    width: "90%"
+  },
+  button: {
+    width: "90%"
   }
 };
 
@@ -24,7 +27,7 @@ class TextBox extends Component {
   }
 
   /* Call event handlers passed from parent component to lift the state */
-  
+
   onChange(e) {
     this.props.onChange(e.target.value);
   }
@@ -51,6 +54,8 @@ class TextBox extends Component {
             size="large"
             color="primary"
             onClick={this.handleButtonClick}
+            className={this.props.classes.button}
+            fullWidth={true}
             >
             Submit
           </Button>
