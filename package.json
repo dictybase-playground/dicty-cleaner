@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "dicty-components-header-footer": "github:dictyBase/dicty-components-header-footer#v4.2.0",
     "material-ui": "^1.0.0-beta.34",
     "random-string": "^0.2.0",
@@ -15,6 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "webpack-dev-server --hot"
   }
 }

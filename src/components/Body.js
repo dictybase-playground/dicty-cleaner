@@ -12,6 +12,8 @@ class Body extends Component {
       input: "",
       result: "",
       isLoading: false,
+      error: null,
+      sample: "",
   };
 
     /* React components using ES6 classes do not autobind non React methods */
@@ -25,10 +27,15 @@ class Body extends Component {
     console.log("Updated Input: ", this.state.input);
   }
 
-  handleButtonClick() {
-    /* When button is clicked, update the result */
-    this.setState({ input: this.state.input, result: randomString({length: 10}) });
-    console.log("Button was clicked! Here is the result: ", this.state.result);
+  componentWillMount() {
+
+  }
+
+  async handleButtonClick() {
+    fetch('https://api.github.com/users/hadley/orgs')
+      .then((res) => res.json())
+      .then((something) => this.setState({sample: something}))
+    console.log("Sample", this.state.sample)
   }
 
   render() {
@@ -41,6 +48,7 @@ class Body extends Component {
       <div>
         <center>
           <h1>Dicty Cleaner</h1>
+          {this.state.pictures}
         </center>
         <Divider />
         <Grid container spacing={16} >
