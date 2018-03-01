@@ -8,7 +8,11 @@ import Divider from 'material-ui/Divider';
 class Body extends Component {
   constructor(props) {
     super(props);
-    this.state = { input: "", result: "" };
+    this.state = {
+      input: "",
+      result: "",
+      isLoading: false,
+  };
 
     /* React components using ES6 classes do not autobind non React methods */
     this.onChange = this.onChange.bind(this);
@@ -28,6 +32,11 @@ class Body extends Component {
   }
 
   render() {
+
+    if (this.state.isLoading) {
+      return <p>Loading...</p>;
+    }
+
     return (
       <div>
         <center>
