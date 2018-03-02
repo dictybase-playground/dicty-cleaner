@@ -34,7 +34,7 @@ class TextBox extends Component {
   }
 
   handleButtonClick() {
-    this.props.handleButtonClick();
+    this.props.handleButtonClick("DDB_G2829329");
   }
 
   render() {

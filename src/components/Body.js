@@ -27,17 +27,14 @@ class Body extends Component {
     console.log("Updated Input: ", this.state.input);
   }
 
-  async handleButtonClick() {
-    let githubResponse = await fetch(`https://api.github.com/users/sujunglee`);
-    // "await" keyword makes JS wait until the promise is resolved, then stores result of the promise into "result" variable
-    // You cannot use "await" in a non-async function; that is a syntax error
-
-    // store result of fetch request as JSON in variable githubUser
-    let githubUser = await githubResponse.json();
-
-    console.log("The result:", githubUser);
-    alert(githubResponse); // pop-up of result
-
+  async handleButtonClick(id) {
+    try {
+      let response = await fetch("http://dictybase.org/cache/gene/" + id, {
+        method: "delete"
+      });
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   render() {
