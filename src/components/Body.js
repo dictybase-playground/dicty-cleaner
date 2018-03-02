@@ -3,7 +3,7 @@ import Grid from "material-ui/Grid";
 import TextBox from "./TextBox";
 import ResultBox from "./ResultBox";
 import randomString from "random-string";
-import Divider from 'material-ui/Divider';
+import Divider from "material-ui/Divider";
 
 class Body extends Component {
   constructor(props) {
@@ -13,8 +13,8 @@ class Body extends Component {
       result: "",
       isLoading: false,
       error: null,
-      sample: "",
-  };
+      id: ""
+    };
 
     /* React components using ES6 classes do not autobind non React methods */
     this.onChange = this.onChange.bind(this);
@@ -27,19 +27,21 @@ class Body extends Component {
     console.log("Updated Input: ", this.state.input);
   }
 
-  componentWillMount() {
-
-  }
+  componentWillMount() {}
 
   async handleButtonClick() {
-    fetch('https://api.github.com/users/hadley/orgs')
-      .then((res) => res.json())
-      .then((something) => this.setState({sample: something}))
-    console.log("Sample", this.state.sample)
+    let promise = new Promise(function(resolve, reject) {
+      // the function is executed automatically when the promise is constructed
+      setTimeout(() => resolve("done!"), 1000);
+    });
+
+    let result = await promise; // wait until the promise is resolved
+
+    alert(result); // returns "done"!
+
   }
 
   render() {
-
     if (this.state.isLoading) {
       return <p>Loading...</p>;
     }
@@ -51,7 +53,7 @@ class Body extends Component {
           {this.state.pictures}
         </center>
         <Divider />
-        <Grid container spacing={16} >
+        <Grid container spacing={16}>
           <Grid item xs={12} sm={6}>
             <TextBox
               onChange={this.onChange}
