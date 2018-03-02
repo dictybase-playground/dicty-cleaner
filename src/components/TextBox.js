@@ -21,6 +21,9 @@ const style = {
 class TextBox extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      id: ""
+    }
 
     /* Bind all non-react functions */
     this.onChange = this.onChange.bind(this);
@@ -28,13 +31,12 @@ class TextBox extends Component {
   }
 
   /* Call event handlers passed from parent component to lift the state */
-
   onChange(e) {
-    this.props.onChange(e.target.value);
+    this.props.onChange(e.target.value)
   }
 
-  handleButtonClick() {
-    this.props.handleButtonClick("DDB_G2829329");
+  handleButtonClick(id) {
+    this.props.handleButtonClick(id);
   }
 
   render() {

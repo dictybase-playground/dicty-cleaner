@@ -21,16 +21,15 @@ class Body extends Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  onChange(input) {
-    /* Only update the value of the input */
-    this.setState({ input: input, result: this.state.result });
-    console.log("Updated Input: ", this.state.input);
+  onChange(id) {
+    this.setState({ id: id }, () => { console.log(this.state.id)});
   }
 
   async handleButtonClick(id) {
     try {
       let response = await fetch("http://dictybase.org/cache/gene/" + id, {
-        method: "delete"
+        method: "DELETE", // You can put POST, GET, PUT, etc. in here
+        // mode: "no-cors"
       });
     } catch(error) {
       console.log(error)
