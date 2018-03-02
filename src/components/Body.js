@@ -27,17 +27,16 @@ class Body extends Component {
     console.log("Updated Input: ", this.state.input);
   }
 
-  componentWillMount() {}
-
   async handleButtonClick() {
-    let promise = new Promise(function(resolve, reject) {
-      // the function is executed automatically when the promise is constructed
-      setTimeout(() => resolve("done!"), 1000);
-    });
+    let githubResponse = await fetch(`https://api.github.com/users/sujunglee`);
+    // "await" keyword makes JS wait until the promise is resolved, then stores result of the promise into "result" variable
+    // You cannot use "await" in a non-async function; that is a syntax error
 
-    let result = await promise; // wait until the promise is resolved
+    // store result of fetch request as JSON in variable githubUser
+    let githubUser = await githubResponse.json();
 
-    alert(result); // returns "done"!
+    console.log("The result:", githubUser);
+    alert(githubResponse); // pop-up of result
 
   }
 
