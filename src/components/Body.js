@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import Grid from "material-ui/Grid";
 import TextBox from "./TextBox";
 import ResultBox from "./ResultBox";
-import randomString from "random-string";
 import Divider from "material-ui/Divider";
 
 class Body extends Component {
   constructor(props) {
-    super(props);
+    super(props); // useless sometimes
     this.state = {
       input: "",
       result: "",
@@ -22,17 +21,21 @@ class Body extends Component {
   }
 
   onChange(id) {
-    this.setState({ id: id }, () => { console.log(this.state.id)});
+    this.setState({ id: id }, () => { console.log("ID:", this.state.id)});
   }
 
+  // timeout
+  // two functions, one just mock function for timeout, another is real
+  //
+
   async handleButtonClick(id) {
+    // handler should NOT be async. make the handler call an async function
     try {
       let response = await fetch("http://dictybase.org/cache/gene/" + id, {
-        method: "DELETE", // You can put POST, GET, PUT, etc. in here
-        // mode: "no-cors"
+        method: "DELETE"
       });
     } catch(error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
