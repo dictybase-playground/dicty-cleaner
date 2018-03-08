@@ -44,10 +44,17 @@ class Body extends Component {
     // create promise from scratch using new Promise(resolver)
 
     new Promise(resolve => resolve({ id: "DB_3400" }))
-
-    // set the "isLoading" state to true
+      // set the "isLoading" state to true
       .then(() => this.setState({ isLoading: true }))
       .then(() => console.log(this.state.isLoading))
+
+      // 1 second delay to check that loading sign is working
+      .then(
+        data =>
+          new Promise(function(resolve, reject) {
+            setTimeout(resolve, 1000);
+          })
+      )
 
       // .then creates new Promise that contains result.id
       .then(result => console.log("ID: ", result.id))
@@ -59,7 +66,7 @@ class Body extends Component {
       )
       .catch(error => console.info(error))
       .then(() => this.setState({ isLoading: false }))
-      .then(() => console.log(this.state.isLoading))
+      .then(() => console.log(this.state.isLoading));
   }
 
   render() {
