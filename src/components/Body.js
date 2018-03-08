@@ -44,7 +44,14 @@ class Body extends Component {
     // create promise from scratch using new Promise(resolver)
 
     new Promise(resolve => resolve({ id: "DB_3400" }))
+
+    // set the "isLoading" state to true
+      .then(() => this.setState({ isLoading: true }))
+      .then(() => console.log(this.state.isLoading))
+
+      // .then creates new Promise that contains result.id
       .then(result => console.log("ID: ", result.id))
+      // run http delete request on given result
       .then(id =>
         fetch(id, {
           method: "delete"
@@ -54,9 +61,9 @@ class Body extends Component {
   }
 
   render() {
-    if (this.state.isLoading) {
-      return <p>Loading...</p>;
-    }
+    // if (this.state.isLoading) {
+    //   return <p>Loading...</p>;
+    // }
 
     return (
       <div>
