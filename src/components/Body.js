@@ -57,13 +57,15 @@ class Body extends Component {
           method: "delete"
         })
       )
-      .catch(error => console.info(error));
+      .catch(error => console.info(error))
+      .then(() => this.setState({ isLoading: false }))
+      .then(() => console.log(this.state.isLoading))
   }
 
   render() {
-    // if (this.state.isLoading) {
-    //   return <p>Loading...</p>;
-    // }
+    if (this.state.isLoading) {
+      return <p>Loading...</p>;
+    }
 
     return (
       <div>
