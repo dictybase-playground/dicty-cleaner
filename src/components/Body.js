@@ -44,10 +44,13 @@ class Body extends Component {
     // create promise from scratch using new Promise(resolver)
 
     new Promise(resolve => resolve({ id: "DB_3400" }))
-    .then(result =>
-      console.log(result)
-    );
-
+      .then(result => console.log("ID: ", result.id))
+      .then(id =>
+        fetch(id, {
+          method: "delete"
+        })
+      )
+      .catch(error => console.info(error));
   }
 
   render() {
