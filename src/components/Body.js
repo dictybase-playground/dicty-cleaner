@@ -21,22 +21,31 @@ class Body extends Component {
   }
 
   onChange(id) {
-    this.setState({ id: id }, () => { console.log("ID:", this.state.id)});
+    this.setState({ id: id }, () => {
+      console.log("ID:", this.state.id);
+    });
   }
 
   // timeout
   // two functions, one just mock function for timeout, another is real
   //
 
-  async handleButtonClick(id) {
-    // handler should NOT be async. make the handler call an async function
-    try {
-      let response = await fetch("http://dictybase.org/cache/gene/" + id, {
-        method: "DELETE"
-      });
-    } catch(error) {
-      console.log(error);
-    }
+  handleButtonClick(id) {
+    // Note: handler should NOT be async. make the handler a normal function that CALLS an async function in its body
+
+    var p = fetch("some_response");
+
+    p.then(res => {
+      console.log(res);
+    });
+
+    // .then and .catch RETURN A NEW PROMISE EVERY TIME
+
+    // note that this catch is chained onto the ORIGINAL promise
+    // if we changed .catch to .then, it catches the error for a different promise
+    p.catch(error => {
+      console.log("ERROR");
+    });
   }
 
   render() {
