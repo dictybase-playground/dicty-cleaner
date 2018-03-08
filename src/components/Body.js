@@ -31,21 +31,23 @@ class Body extends Component {
   //
 
   handleButtonClick(id) {
-    // Note: handler should NOT be async. make the handler a normal function that CALLS an async function in its body
+    // handler should NOT be async. make the handler a normal function that CALLS an async function in its body
 
-    var p = fetch("some_response");
+    // try {
+    //   let response = await fetch("http://dictybase.org/cache/gene/" + id, {
+    //     method: "DELETE"
+    //   });
+    // } catch(error) {
+    //   console.log(error);
+    // }
 
-    p.then(res => {
-      console.log(res);
-    });
+    // create promise from scratch using new Promise(resolver)
 
-    // .then and .catch RETURN A NEW PROMISE EVERY TIME
+    new Promise(resolve => resolve({ id: "DB_3400" }))
+    .then(result =>
+      console.log(result)
+    );
 
-    // note that this catch is chained onto the ORIGINAL promise
-    // if we changed .catch to .then, it catches the error for a different promise
-    p.catch(error => {
-      console.log("ERROR");
-    });
   }
 
   render() {
